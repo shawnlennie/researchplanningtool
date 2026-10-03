@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Research Project Plan of Action — Dash and Dot Coding and Descriptive Vocabulary</title>
+<style>
+/* ===== form styles ===== */
+:root {
+  --ink: #1d1d1f;
+  --sub: #6e6e73;
+  --bg: #f5f5f7;
+  --card: #ffffff;
+  --accent: #0071e3;
+  --line: #d2d2d7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+}
+
+header {
+  margin-bottom: 32px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.sub {
+  color: var(--sub);
+  font-size: 16px;
+  margin: 0;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  font-size: 18px;
+  margin: 0 0 16px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  color: var(--sub);
+  margin-bottom: 6px;
+}
+
+textarea, input[type="text"], input[type="number"], select {
+  width: 100%;
+  font-size: 15px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-family: inherit;
+  background: #fff;
+  color: var(--ink);
+}
+
+textarea { resize: vertical; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field { min-width: 0; }
+
+.hint {
+  font-size: 13px;
+  color: var(--sub);
+  margin: -4px 0 14px;
+}
+
+.checks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.checks label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.checks input { margin-top: 3px; }
+
+.grade-block {
+  margin-bottom: 20px;
+}
+
+.grade-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.grade-grid label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 15px;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+  min-width: 56px;
+  justify-content: center;
+}
+
+.grade-grid input { margin: 0; }
+
+.grade-block .hint {
+  margin: 12px 0 0;
+}
+
+.custom-source {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.custom-source-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.custom-source-row input {
+  flex: 1;
+}
+
+button.small {
+  padding: 10px 18px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.custom-source-list {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.custom-source-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: var(--bg);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.custom-source-list button {
+  background: none;
+  border: none;
+  color: var(--sub);
+  font-size: 13px;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.custom-source-list button:hover {
+  color: #ff3b30;
+}
+
+/* ===== generated plan styles ===== */
+.actions {
+  display: flex;
+  gap: 12px;
+  margin: 28px 0;
+}
+
+button {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 22px;
+  border-radius: 980px;
+  border: none;
+  cursor: pointer;
+}
+
+button.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+button.secondary {
+  background: #fff;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.plan {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+.plan h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--sub);
+  margin: 18px 0 6px;
+}
+
+.plan h2 {
+  font-size: 20px;
+  margin: 28px 0 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+
+.plan h2:first-child {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+}
+
+.plan h1 {
+  font-size: 24px;
+  margin: 0 0 4px;
+}
+
+.report-header {
+  text-align: center;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.report-header h1 {
+  margin: 2px 0 10px;
+}
+
+.report-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  margin: 0;
+}
+
+.report-meta-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.report-meta-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 110px;
+}
+
+.report-meta-label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--sub);
+  margin-bottom: 3px;
+}
+
+.report-meta-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.plan p, .plan li {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.plan ul { padding-left: 20px; }
+
+.plan .week {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+
+.plan .week h4 {
+  font-size: 15px;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+}
+
+.plan .tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 980px;
+  padding: 2px 8px;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+.plan .lane {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--sub);
+  margin: 12px 0 4px;
+}
+
+.plan .week .lane:first-of-type { margin-top: 0; }
+
+.plan .week ul { margin: 0; }
+
+@media print {
+  .actions, header .eyebrow { display: none !important; }
+  .card { display: none; }
+  body { background: #fff; }
+  .plan { border: none; padding: 0; }
+  .plan .week { break-inside: avoid; page-break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">Evidence of Impact — Strategic Project Tooling</p>
+    <h1>Research Project Plan of Action</h1>
+    <p class="sub">Dash and Dot robot coding on iPad, and its relationship to descriptive vocabulary growth</p>
+  </header>
+
+  <section class="card">
+    <h2>1. Research Question</h2>
+    <label for="question">Guiding question (edit to fit your context)</label>
+    <textarea id="question" rows="2">What impact does coding Dash and Dot robots on iPad have on learners' descriptive vocabulary?</textarea>
+  </section>
+
+  <section class="card">
+    <h2>2. Study Parameters</h2>
+
+    <div class="grade-block">
+      <label>Learner grades — select all that apply</label>
+      <div class="grade-grid" id="gradeGrid">
+        <label><input type="checkbox" class="gradeBox" value="K" checked> K</label>
+        <label><input type="checkbox" class="gradeBox" value="1" checked> 1</label>
+        <label><input type="checkbox" class="gradeBox" value="2" checked> 2</label>
+        <label><input type="checkbox" class="gradeBox" value="3" checked> 3</label>
+        <label><input type="checkbox" class="gradeBox" value="4"> 4</label>
+        <label><input type="checkbox" class="gradeBox" value="5"> 5</label>
+        <label><input type="checkbox" class="gradeBox" value="6"> 6</label>
+        <label><input type="checkbox" class="gradeBox" value="7"> 7</label>
+        <label><input type="checkbox" class="gradeBox" value="8"> 8</label>
+      </div>
+      <p class="hint">Scaffolding recommendations are grouped by the stages your selection spans:
+      Early Learning (K), Primary (1 to 3), Junior (4 to 6), and Intermediate (7 to 8).</p>
+    </div>
+
+    <div class="grid">
+      <div class="field">
+        <label for="setting">Setting</label>
+        <select id="setting">
+          <option value="early learning environment">Early learning environment</option>
+          <option value="elementary classroom">Elementary classroom</option>
+          <option value="community of practice pilot site">Community of Practice pilot site</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="size">Number of participants</label>
+        <input type="number" id="size" min="1" value="18">
+      </div>
+      <div class="field">
+        <label for="durationWeeks">Study duration (weeks)</label>
+        <input type="number" id="durationWeeks" min="1" value="10">
+      </div>
+      <div class="field">
+        <label for="startDate">Study start date (defaults to October 15, 2026)</label>
+        <input type="date" id="startDate">
+      </div>
+      <div class="field">
+        <label for="researcher">Lead educator / researcher</label>
+        <input type="text" id="researcher" placeholder="Name">
+      </div>
+      <div class="field">
+        <label for="site">School or board</label>
+        <input type="text" id="site" placeholder="e.g. YCDSB, TDSB, Langley SD">
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>3. Field Data Sources</h2>
+    <p class="hint">Select the sources that will capture evidence of vocabulary growth alongside the coding sessions.</p>
+    <div class="checks">
+      <label><input type="checkbox" value="Pre- and post-session oral language samples" checked> Pre- and post-session oral language samples</label>
+      <label><input type="checkbox" value="Learner writing samples describing robot sequences" checked> Learner writing samples describing robot sequences</label>
+      <label><input type="checkbox" value="Video documentation of coding and debriefing sessions" checked> Video documentation of coding and debriefing sessions</label>
+      <label><input type="checkbox" value="Educator pedagogical documentation and observation notes" checked> Educator pedagogical documentation and observation notes</label>
+      <label><input type="checkbox" value="Descriptive vocabulary word bank tracking"> Descriptive vocabulary word bank tracking</label>
+      <label><input type="checkbox" value="Family or caregiver reflection surveys"> Family or caregiver reflection surveys</label>
+    </div>
+
+    <div class="custom-source">
+      <label for="customSourceInput">Add your own field data source</label>
+      <div class="custom-source-row">
+        <input type="text" id="customSourceInput" placeholder="e.g. Peer interview transcripts">
+        <button type="button" id="addSourceBtn" class="secondary small">Add</button>
+      </div>
+      <ul id="customSourceList" class="custom-source-list"></ul>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>4. Creative Learning Series — the intervention</h2>
+    <p class="hint">The series is what the study measures, so it anchors the weekly plan rather
+    than sitting alongside it. Six Thursday modules run October 22 to November 26, 2026. Week 1
+    is the baseline week before module one, each module sets the language focus for the week
+    that follows, and the duration above extends automatically if it would otherwise cut the
+    series short. Edit the titles to fit your actual module plan — one per line, six expected.</p>
+    <textarea id="seriesTitles" rows="6">Module 1: Getting Started — Sequencing, Direction
+Module 2: Cause and Effect and Sensors
+Module 3: Adding Voice — Describing the World Around
+Module 4: A Conversation Between Friends
+Module 5: Crafting a Simple Story (Part 1)
+Module 6: Crafting a Simple Story (Part 2)</textarea>
+  </section>
+
+  <div class="actions">
+    <button id="generateBtn" class="primary">Generate Research Plan</button>
+    <button id="printBtn" class="secondary" style="display:none;">Print / Save as PDF</button>
+  </div>
+
+  <section id="output" class="plan" style="display:none;"></section>
+
+  <div class="actions" id="bottomActions" style="display:none;">
+    <button id="downloadPdfBtn" class="primary">Download as PDF</button>
+  </div>
+
+</div>
+<script>
+// ===== content.js =====
+// Editorial content for the Research Project Plan of Action.
+// Module scaffolds are indexed by module POSITION (1-6), not by title, so they
+// stay valid when an educator rewrites the module titles for their own context.
+
+const DEFAULT_SERIES_TITLES = [
+  "Module 1: Getting Started — Sequencing, Direction",
+  "Module 2: Cause and Effect and Sensors",
+  "Module 3: Adding Voice — Describing the World Around",
+  "Module 4: A Conversation Between Friends",
+  "Module 5: Crafting a Simple Story (Part 1)",
+  "Module 6: Crafting a Simple Story (Part 2)"
+];
+
+// One per module, ordered to build on each other: naming and direction, then
+// causal and sensor language, then environment, then dialogue, then narrative
+// across two modules.
+const SESSION_SCAFFOLDS = [
+  {
+    focus: "Noticing and naming plus ordered direction language — what the robot looks, moves, and sounds like, and the forward, reverse, turn, degree, and sequencing words that hold a path together.",
+    between: "Partner obstacle course: one learner describes the route in words only, the other codes it. Swap roles, then compare what wording worked."
+  },
+  {
+    focus: "Cause-and-effect language — because, so, then — paired with the adjectives that distinguish what each sensor detects and how the robot responds.",
+    between: "What happened and why journals: after each run, learners record what they expected, what the robot did, why the two differed, and which sensor was involved."
+  },
+  {
+    focus: "Giving the robot a voice to describe the world around it — setting, spatial relationships, and sensory detail used to narrate the space it moves through.",
+    between: "Environment sketch and label: learners draw the course and label it with descriptive words, then give the robot a voiceover line as it travels the path."
+  },
+  {
+    focus: "Friendly dialogue language — turn-taking, descriptive dialogue tags, and the vocabulary of exchange, built by scripting a conversation between two robot friends.",
+    between: "Two-friend script rehearsal: learners write and read aloud a short exchange, then revise it once they hear how it sounds."
+  },
+  {
+    focus: "Narrative planning — characters, setting, and plot sequence for a simple story, drafted in descriptive language before any coding begins.",
+    between: "Story planning board: learners map character, setting, and the order of events, using descriptive words at each stage."
+  },
+  {
+    focus: "Narrative crafting and explanatory talk — turning the planned story into a coded sequence and describing it precisely enough for an audience to follow.",
+    between: "Rehearse a 60-second telling of the finished story, record it, and compare it directly against the Week 1 baseline sample."
+  }
+];
+
+const GRADE_ORDER = ["K", "1", "2", "3", "4", "5", "6", "7", "8"];
+
+const GRADE_BANDS = [
+  { key: "early", label: "Early Learning (Kindergarten)", grades: ["K"] },
+  { key: "primary", label: "Primary (Grades 1 to 3)", grades: ["1", "2", "3"] },
+  { key: "junior", label: "Junior (Grades 4 to 6)", grades: ["4", "5", "6"] },
+  { key: "intermediate", label: "Intermediate (Grades 7 to 8)", grades: ["7", "8"] }
+];
+
+const RECOMMENDATIONS = {
+  early: [
+    "Sensory bins paired with direction words during free play (over, under, through, around).",
+    "Picture-supported robot talk cue cards for forward, turn, and stop.",
+    "Shared read-alouds featuring movement and spatial vocabulary.",
+    "Dramatic play retelling of the robot's path using gesture alongside words."
+  ],
+  primary: [
+    "Descriptive vocabulary word walls tied to coding terms such as sequence, loop, and direction.",
+    "Partner narrate the plan routines before each coding attempt.",
+    "Robot story journals describing what happened and why.",
+    "Think-pair-share debriefs focused on cause-and-effect language."
+  ],
+  junior: [
+    "Peer coding reviews that require describing logic aloud to a partner.",
+    "Descriptive challenge cards: describe a completed path without naming the moves.",
+    "Cross-curricular writing connecting coding sequences to narrative structure.",
+    "Student-led showcases where learners explain their code to a visiting audience."
+  ],
+  intermediate: [
+    "Technical write-ups documenting an algorithm precisely enough for another group to reproduce it.",
+    "Debugging logs that name the fault and the reasoning behind each fix.",
+    "Comparative analysis of two solutions to the same path, justifying which is more efficient and why.",
+    "Learner-led workshops teaching a younger cohort, adjusting vocabulary for the audience."
+  ]
+};
+
+// What to capture in each module week, aligned to that module's language focus.
+const SESSION_DATA = [
+  "Capture audio of the partner obstacle course — the describing role is the data. Note which direction and sequencing words appear unprompted versus which still need an adult cue.",
+  "Collect the what happened and why journals. Tally causal connectives (because, so, then) and note which sensor-specific words appear alongside them.",
+  "Photograph the labeled environment sketches and record the robot's voiceover line. Note which descriptive and spatial words moved from the label into spoken narration.",
+  "Record the two-friend script rehearsal. Note turn-taking language and any descriptive dialogue tags learners add during revision.",
+  "Collect the story planning boards. Note the descriptive vocabulary learners use for character and setting before any coding begins.",
+  "Record the finished story telling. Compare directly against the Week 1 baseline sample and against the Module 5 planning board for growth across the two modules."
+];
+
+// Lane content for weeks that do not carry a series module.
+const WEEK_LANES = {
+  baseline: {
+    learning: "Introduce Dash and Dot informally, without a coding task attached, so learners have a shared referent to talk about. Establish the describe-then-code talk routine the study depends on.",
+    data: "Collect the baseline oral and written language sample. Set up the documentation folder and a consistent file naming convention before any intervention data arrives."
+  },
+  prep: {
+    learning: "Preparation week. Rehearse the talk routines and let learners handle the robots freely, building familiarity that the first module can build on.",
+    data: "Extend the baseline sample if the first pass felt thin. Confirm recording equipment and storage work end to end on a low-stakes trial."
+  },
+  consolidation: {
+    learning: "No series module this week. Revisit the most recent between-module activity and invite learners to re-attempt a sequence they abandoned earlier.",
+    data: "Review documentation collected to date. Moderate a small sample with a colleague against the shared rubric to check your scoring is consistent."
+  },
+  endpoint: {
+    learning: "Learners repeat the Week 1 description task, this time with the full vocabulary developed across the series. Keep the prompt identical so the comparison holds.",
+    data: "Collect the endpoint sample and compare directly against baseline. Begin synthesis: what shifted, for whom, and what the field data suggests about why."
+  }
+};
+
+function sortGrades(grades) {
+  return GRADE_ORDER.filter(g => grades.includes(g));
+}
+
+function gradeNum(g) {
+  return g === "K" ? 0 : Number(g);
+}
+
+function gradeName(g) {
+  return g === "K" ? "Kindergarten" : `Grade ${g}`;
+}
+
+// "K,1,2,5" becomes "Kindergarten to Grade 2 and Grade 5".
+function formatGrades(grades) {
+  const sorted = sortGrades(grades);
+  if (!sorted.length) return "no grades selected";
+
+  const runs = [];
+  sorted.forEach(g => {
+    const last = runs[runs.length - 1];
+    if (last && gradeNum(g) === gradeNum(last[last.length - 1]) + 1) last.push(g);
+    else runs.push([g]);
+  });
+
+  const parts = runs.map(run => {
+    if (run.length === 1) return gradeName(run[0]);
+    const a = run[0], b = run[run.length - 1];
+    return a === "K" ? `Kindergarten to ${gradeName(b)}` : `Grades ${a} to ${b}`;
+  });
+
+  if (parts.length === 1) return parts[0];
+  if (parts.length === 2) return `${parts[0]} and ${parts[1]}`;
+  return `${parts.slice(0, -1).join(", ")}, and ${parts[parts.length - 1]}`;
+}
+
+// One recommendation group per stage band the selected grades touch.
+function getRecommendationGroups(grades) {
+  return GRADE_BANDS
+    .filter(b => b.grades.some(g => grades.includes(g)))
+    .map(b => ({ label: b.label, items: RECOMMENDATIONS[b.key] }));
+}
+
+function getSeriesTitlesFromInput(raw) {
+  const lines = (raw || "").split("\n").map(l => l.trim()).filter(Boolean);
+  return Array.from({ length: 6 }, (_, i) => lines[i] || DEFAULT_SERIES_TITLES[i]);
+}
+
+// ===== schedule.js =====
+// Scheduling logic. The Creative Learning Series IS the intervention, so the
+// study window is anchored to it: the plan always covers all six sessions.
+
+const SERIES_FIRST = new Date(2026, 9, 22); // Thursday, October 22, 2026
+
+function parseDateInput(raw) {
+  if (!raw) return null;
+  const [y, m, d] = raw.split("-").map(Number);
+  if (!y || !m || !d) return null;
+  return new Date(y, m - 1, d);
+}
+
+function addDays(date, days) {
+  const d = new Date(date);
+  d.setDate(d.getDate() + days);
+  return d;
+}
+
+function weeksBetween(a, b) {
+  return Math.floor(Math.round((b - a) / 86400000) / 7);
+}
+
+function formatLong(d) {
+  return d.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+}
+
+function formatShort(d) {
+  return d.toLocaleDateString("en-US", { month: "long", day: "numeric" });
+}
+
+function getSeriesDateObjects() {
+  return Array.from({ length: 6 }, (_, i) => addDays(SERIES_FIRST, i * 7));
+}
+
+// Resolve the real study window. Defaults to one baseline week before the first
+// session, and extends the duration if needed so every session plus a closing
+// endpoint week fits inside the plan.
+function resolveSchedule(weeksRequested, startDateStr) {
+  const sessions = getSeriesDateObjects();
+  const last = sessions[5];
+  const start = parseDateInput(startDateStr) || addDays(SERIES_FIRST, -7);
+  const minWeeks = Math.max(2, weeksBetween(start, last) + 2);
+  const weeks = Math.max(weeksRequested, minWeeks);
+
+  return {
+    start,
+    weeks,
+    sessions,
+    requested: weeksRequested,
+    extended: weeks > weeksRequested,
+    startsMidSeries: start > sessions[0],
+    end: addDays(start, weeks * 7 - 1)
+  };
+}
+
+function getStudyWindowLabel(sched) {
+  return `${formatLong(sched.start)} through ${formatLong(sched.end)}`;
+}
+
+function laneBlock(label, items) {
+  if (!items.length) return "";
+  return `<p class="lane">${label}</p><ul>${items.map(i => `<li>${i}</li>`).join("")}</ul>`;
+}
+
+function buildTopicalPlan(sched, titles) {
+  const blocks = [];
+
+  for (let w = 1; w <= sched.weeks; w++) {
+    const weekStart = addDays(sched.start, (w - 1) * 7);
+    const weekEnd = addDays(weekStart, 6);
+    const idx = sched.sessions.findIndex(sd => sd >= weekStart && sd <= weekEnd);
+    const learning = [];
+    const data = [];
+
+    if (w === 1) {
+      learning.push(WEEK_LANES.baseline.learning);
+      data.push(WEEK_LANES.baseline.data);
+    }
+
+    if (idx !== -1) {
+      const s = SESSION_SCAFFOLDS[idx];
+      const title = /^module\s*\d+/i.test(titles[idx]) ? titles[idx] : `Module ${idx + 1}: ${titles[idx]}`;
+      learning.push(`<strong>Creative Learning Series, ${formatLong(sched.sessions[idx])} — ${title}.</strong> ${s.focus}`);
+      learning.push(`<em>Between modules:</em> ${s.between}`);
+      data.push(SESSION_DATA[idx]);
+    }
+
+    if (w === sched.weeks) {
+      learning.push(WEEK_LANES.endpoint.learning);
+      data.push(WEEK_LANES.endpoint.data);
+    }
+
+    if (learning.length === 0) {
+      const key = weekEnd < sched.sessions[0] ? "prep" : "consolidation";
+      learning.push(WEEK_LANES[key].learning);
+      data.push(WEEK_LANES[key].data);
+    }
+
+    const tag = idx !== -1 ? ' <span class="tag">Intervention</span>' : "";
+    blocks.push(`<div class="week">
+      <h4>Week ${w} &middot; ${formatShort(weekStart)} to ${formatShort(weekEnd)}${tag}</h4>
+      ${laneBlock("Learning Activities", learning)}
+      ${laneBlock("Data Collection and Documentation", data)}
+    </div>`);
+  }
+
+  let html = blocks.join("");
+
+  if (sched.extended) {
+    html += `<p class="hint">Duration extended from ${sched.requested} to ${sched.weeks} weeks so the
+    plan covers all six Creative Learning Series modules plus a closing endpoint week.</p>`;
+  }
+
+  if (sched.startsMidSeries) {
+    html += `<p class="hint">The start date falls after the first series module on
+    ${formatLong(sched.sessions[0])}, so the plan begins partway through the intervention.
+    Move the start date to ${formatLong(addDays(SERIES_FIRST, -7))} or earlier to capture a
+    clean baseline before module one.</p>`;
+  }
+
+  return html;
+}
+
+// ===== script.js =====
+function todayLabel() {
+  return new Date().toLocaleDateString("en-US", {
+    year: "numeric", month: "long", day: "numeric"
+  });
+}
+
+let customSources = [];
+
+function renderCustomSources() {
+  const list = document.getElementById("customSourceList");
+  list.innerHTML = customSources.map((s, i) => `
+    <li>
+      <span>${escapeHtml(s)}</span>
+      <button type="button" data-index="${i}" class="removeSourceBtn">Remove</button>
+    </li>
+  `).join("");
+
+  list.querySelectorAll(".removeSourceBtn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      customSources.splice(Number(btn.dataset.index), 1);
+      renderCustomSources();
+    });
+  });
+}
+
+function addCustomSource() {
+  const input = document.getElementById("customSourceInput");
+  const value = input.value.trim();
+  if (!value) return;
+  customSources.push(value);
+  input.value = "";
+  renderCustomSources();
+  input.focus();
+}
+
+document.getElementById("addSourceBtn").addEventListener("click", addCustomSource);
+document.getElementById("customSourceInput").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    addCustomSource();
+  }
+});
+
+function collectInputs() {
+  const checks = Array.from(document.querySelectorAll(".checks input:checked"))
+    .map(c => c.value);
+
+  const grades = Array.from(document.querySelectorAll(".gradeBox:checked"))
+    .map(c => c.value);
+
+  return {
+    question: document.getElementById("question").value.trim(),
+    grades: grades.length ? grades : ["1", "2", "3"],
+    setting: document.getElementById("setting").value,
+    size: document.getElementById("size").value || "a cohort of",
+    durationWeeks: Math.max(1, Number(document.getElementById("durationWeeks").value) || 10),
+    startDate: document.getElementById("startDate").value,
+    researcher: document.getElementById("researcher").value.trim(),
+    site: document.getElementById("site").value.trim(),
+    sources: checks.concat(customSources),
+    seriesTitles: getSeriesTitlesFromInput(document.getElementById("seriesTitles").value)
+  };
+}
+
+function withArticle(noun) {
+  return `${/^[aeiou]/i.test(noun) ? "an" : "a"} ${noun}`;
+}
+
+function buildPlan(data) {
+  const schoolLabel = data.site || "[school or board]";
+  const researcherLabel = data.researcher || "[researcher name]";
+  const sched = resolveSchedule(data.durationWeeks, data.startDate);
+  const windowLabel = getStudyWindowLabel(sched);
+  const gradeLabel = formatGrades(data.grades);
+  const groups = getRecommendationGroups(data.grades);
+  const sourceList = data.sources.length
+    ? data.sources
+    : ["Pre- and post-session oral language samples", "Learner writing samples describing robot sequences"];
+
+  return `
+    <header class="report-header">
+      <p class="report-eyebrow">Dash and Dot robot coding and descriptive vocabulary</p>
+      <h1>Research Project Plan of Action</h1>
+      <div class="report-meta-grid">
+        <div class="report-meta-item"><span class="report-meta-label">School / Board</span><span class="report-meta-value">${escapeHtml(schoolLabel)}</span></div>
+        <div class="report-meta-item"><span class="report-meta-label">Grade(s)</span><span class="report-meta-value">${escapeHtml(gradeLabel)}</span></div>
+        <div class="report-meta-item"><span class="report-meta-label">Educator</span><span class="report-meta-value">${escapeHtml(researcherLabel)}</span></div>
+        <div class="report-meta-item"><span class="report-meta-label">Generated</span><span class="report-meta-value">${todayLabel()}</span></div>
+      </div>
+    </header>
+
+    <h2>Research Question</h2>
+    <p>${escapeHtml(data.question)}</p>
+
+    <h2>Context and Rationale</h2>
+    <p>Coding Dash and Dot robots on iPad asks learners to plan a sequence, test it, and then
+    explain what happened and why. That explaining step is where descriptive vocabulary gets
+    exercised in context — direction words, cause-and-effect language, sensory and spatial
+    description. This strategic project treats the coding activity as the intervention and
+    tracks whether sustained, repeated use builds richer descriptive language over time,
+    rather than treating vocabulary growth as incidental.</p>
+
+    <h2>Participants and Setting</h2>
+    <p>${data.size} learners in ${gradeLabel}, within ${withArticle(data.setting)},
+    over ${sched.weeks} week${sched.weeks === 1 ? "" : "s"} (${windowLabel}).</p>
+
+    <h2>Methodology</h2>
+    <p>A mixed-methods, pre/post design. Quantitative measures track vocabulary range and
+    specificity across the study window; qualitative field data captures how that language
+    surfaces during the coding and debriefing process itself.</p>
+    <ul>
+      <li><strong>Baseline:</strong> collect an initial language sample before any Dash and Dot sessions begin.</li>
+      <li><strong>Intervention:</strong> the Creative Learning Series — six Thursday modules from
+      ${formatLong(sched.sessions[0])} to ${formatLong(sched.sessions[5])} — in which learners
+      narrate their plan, run the sequence, and describe the outcome aloud or in writing. Each
+      module carries a between-module activity that extends the same language focus into the
+      days that follow.</li>
+      <li><strong>Endpoint:</strong> repeat the same language sample task at the close of the study
+      window for direct comparison against baseline.</li>
+    </ul>
+
+    <h2>Field Data Sources</h2>
+    <ul>
+      ${sourceList.map(s => `<li>${escapeHtml(s)}</li>`).join("")}
+    </ul>
+
+    <h2>Topical Plan — Week by Week</h2>
+    <p>Study window: ${windowLabel}. The Creative Learning Series is the intervention, so the six
+    modules anchor this plan rather than sitting alongside it. Each week is split into two lanes —
+    <strong>Learning Activities</strong>, what happens with learners, and <strong>Data Collection
+    and Documentation</strong>, what to capture while it happens — so the evidence is gathered as
+    part of the teaching rather than reconstructed afterwards.</p>
+    ${buildTopicalPlan(sched, data.seriesTitles)}
+
+    <h2>Evidence of Impact Indicators</h2>
+    <ul>
+      <li>Growth in unique descriptive terms used per module (direction, motion, sensory language).</li>
+      <li>Increased specificity in describing cause and effect ("it turned left because I set 90 degrees"
+      versus "it turned").</li>
+      <li>Educator-observed shifts in learners' willingness to narrate their own thinking unprompted.</li>
+      <li>Comparative writing or speech samples, baseline versus endpoint, scored against a shared rubric.</li>
+    </ul>
+
+    <h2>Additional Scaffolding Activities</h2>
+    <p>Alongside the between-module activities already built into the weekly plan above, these
+    ongoing routines give educators working with ${gradeLabel} further ways to braid coding
+    ability and descriptive language ability together. Routines are grouped by the stage bands
+    your selected grades span, so a multi-grade cohort can draw from more than one set.</p>
+    ${groups.map(g => `
+      <h3>${g.label}</h3>
+      <ul>${g.items.map(r => `<li>${escapeHtml(r)}</li>`).join("")}</ul>
+    `).join("")}
+
+    <h2>Knowledge Mobilization</h2>
+    <p>Findings feed into the Evidence of Impact dashboard as a research study entry, with
+    anonymized excerpts available for Community of Practice sessions, board-level roundtables,
+    and family-facing summaries.</p>
+  `;
+}
+
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
+}
+
+document.getElementById("generateBtn").addEventListener("click", () => {
+  const data = collectInputs();
+  const output = document.getElementById("output");
+  output.innerHTML = buildPlan(data);
+  output.style.display = "block";
+  document.getElementById("printBtn").style.display = "inline-block";
+  document.getElementById("bottomActions").style.display = "flex";
+  output.scrollIntoView({ behavior: "smooth" });
+});
+
+document.getElementById("downloadPdfBtn").addEventListener("click", () => {
+  window.print();
+});
+
+document.getElementById("printBtn").addEventListener("click", () => {
+  window.print();
+});
+</script>
+</body>
+</html>
